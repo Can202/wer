@@ -138,7 +138,7 @@ def extra_commands(arg):
             else:
                 ls = os.listdir(patha.replace(os.path.basename(patha), ""))
         else:
-            ls = os.listdir( __file__.replace(os.path.basename(__file__), "") )
+            ls = os.listdir('.')
         i = 0
         for i in range (len(ls)):
             print("- " + ls[i])
