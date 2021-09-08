@@ -4,7 +4,6 @@
 import sys
 from sys import exit
 import os
-from termcolor import colored
 
 def main():
 
