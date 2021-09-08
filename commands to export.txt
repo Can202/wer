@@ -1,0 +1,5 @@
+windows:
+pyinstaller -n wer -F --distpath export\win wer.py
+
+linux:
+pyinstaller -n wer -F --distpath export/linux wer.py
