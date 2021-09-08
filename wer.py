@@ -75,6 +75,9 @@ def extra_commands(arg):
             if file_exists(arg2):
                 print("The File exists")
                 exit()
+            if folder_exists(arg2) == False:
+                print("Folder doesn't exist")
+                exit()
                 
             fp = open(arg2, 'x')
             fp.close()
@@ -84,6 +87,17 @@ def extra_commands(arg):
             print("        -c <path>")
         exit()
 
+
+def folder_exists(pathfile):
+    name = os.path.basename(pathfile)
+
+    path = pathfile.replace(name,"")
+
+
+    if os.path.exists(path):
+        return True
+    else:
+        return False
 
 def file_exists(pathfile):
     if os.path.exists(pathfile):
