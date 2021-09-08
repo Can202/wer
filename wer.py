@@ -62,6 +62,11 @@ def extra_commands(arg):
         print("    -a or --write-file    Add text to a file")
         print("      Use:")
         print("        -a <path> \"<text>\"")
+        print()
+        print("    -l or --list-dir    list directory")
+        print("      Use:")
+        print("        -l          list current directory")
+        print("        -l <path>   list <path> directory")
         exit()
     elif arg == "-v" or arg == "--version":
         print("0.3")
