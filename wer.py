@@ -1,4 +1,6 @@
 
+#!/usr/bin/python3
+
 import sys
 from sys import exit
 import os
