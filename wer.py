@@ -31,7 +31,7 @@ def extra_commands(arg):
         print("        -f <path>")
         exit()
     elif arg == "-v" or arg == "--version":
-        print("0.1-dev")
+        print("0.1")
         exit()
     elif arg == "-f" or arg == "--file-exists":
         if len(sys.argv) > 2:
