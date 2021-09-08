@@ -8,7 +8,7 @@ def main():
         pathfile = sys.argv[1]
         pathfile = str(pathfile)
     else:
-        print("Not file")
+        extra_commands("-h")
         exit()
 
     extra_commands(pathfile)
