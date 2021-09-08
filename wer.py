@@ -82,7 +82,7 @@ def extra_commands(arg):
         exit()
 
 
-def createfile(path):
+def createfile(path, write=False, text=""):
     arg2 = str(path)
 
     if arg2.endswith("/") or arg2.endswith("\\"):
@@ -99,15 +99,17 @@ def createfile(path):
 
 
 def folder_exists(pathfile):
-    name = os.path.basename(pathfile)
+    if "/" in pathfile or "\\" in pathfile:
+        name = os.path.basename(pathfile)
 
-    path = pathfile.replace(name,"")
+        path = pathfile.replace(name,"")
 
 
-    if os.path.exists(path):
-        return True
-    else:
-        return False
+        if os.path.exists(path):
+            return True
+        else:
+            return False
+    return True
 
 def file_exists(pathfile):
     if os.path.exists(pathfile):
