@@ -4,6 +4,7 @@
 import sys
 from sys import exit
 import os
+from termcolor import colored
 
 def main():
 
@@ -142,7 +143,7 @@ def extra_commands(arg):
             ls = os.listdir( __file__.replace(os.path.basename(__file__), "") )
         i = 0
         for i in range (len(ls)):
-            print(ls[i], end = " ")
+            print(ls[i], end = "    ")
         exit()
 
 
