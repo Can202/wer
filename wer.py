@@ -118,7 +118,7 @@ def extra_commands(arg):
                 print("Folder doesn't exist")
 
         else:
-            print("    -a or --write-file    Add text to a file")
+            print("    -a or --add-file    Add text to a file")
             print("      Use:")
             print("        -a <path> \"<text>\"")
         exit()
