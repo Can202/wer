@@ -67,25 +67,35 @@ def extra_commands(arg):
         exit()
     elif arg == "-c" or arg == "--create-file":
         if len(sys.argv) > 2:
-            arg2=str(sys.argv[2])
-
-            if arg2.endswith("/") or arg2.endswith("\\"):
+            creating = createfile(sys.argv[2])
+            if creating == "isfolder":
                 print("cannot create folders")
-                exit()
-            if file_exists(arg2):
+            elif creating == "fileexists":
                 print("The File exists")
-                exit()
-            if folder_exists(arg2) == False:
+            elif creating == "folderdoesnotexist":
                 print("Folder doesn't exist")
-                exit()
-                
-            fp = open(arg2, 'x')
-            fp.close()
+
         else:
             print("    -c or --create-file    create file if it doesn't exist")
             print("      Use:")
             print("        -c <path>")
         exit()
+
+
+def createfile(path):
+    arg2 = str(path)
+
+    if arg2.endswith("/") or arg2.endswith("\\"):
+        return "isfolder"
+    if file_exists(arg2):
+        return "fileexists"
+    if folder_exists(arg2) == False:
+        return "folderdoesnotexist"
+
+    fp = open(arg2, 'x')
+    fp.close()
+    return "done"
+
 
 
 def folder_exists(pathfile):
