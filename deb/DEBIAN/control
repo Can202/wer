@@ -2,7 +2,7 @@ Package: wer
 Priority: optional
 Maintainer: Can202 <mgoopazo@gmail.com>
 Architecture: all
-Version: 0.1
+Version: 0.3
 Depends: python3
 Description: wer is a program to read file with terminal
  wer is a program to read file with terminal

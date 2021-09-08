@@ -52,7 +52,7 @@ def extra_commands(arg):
         print("        -c <path>")
         exit()
     elif arg == "-v" or arg == "--version":
-        print("0.2")
+        print("0.3")
         exit()
     elif arg == "-f" or arg == "--file-exists":
         if len(sys.argv) > 2:
