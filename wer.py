@@ -33,7 +33,8 @@ def impread(path):
     else:
         return "your file does not exists"
 
-
+def listdir(path):
+    print(os.listdir(path))
 
 def extra_commands(arg):
     if arg == "-h" or arg == "--help":
@@ -125,6 +126,21 @@ def extra_commands(arg):
             print("      Use:")
             print("        -a <path> \"<text>\"")
         exit()
+    elif arg == "-l" or arg == "--list-dir":
+        if len(sys.argv) > 2:
+            patha = str(sys.argv[2])
+            if os.path.isdir(patha):
+                ls = os.listdir(patha)
+            else:
+                ls = os.listdir(patha.replace(os.path.basename(patha), ""))
+        else:
+            ls = os.listdir( __file__.replace(os.path.basename(__file__), "") )
+        i = 0
+        for i in range (len(ls)):
+            print(ls[i], end = " ")
+        exit()
+
+
 
 
 def createfile(path, write='x', text=""):
