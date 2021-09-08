@@ -39,6 +39,9 @@ def extra_commands(arg):
     if arg == "-h" or arg == "--help":
         print("wer is a program to read file with terminal")
         print("Use:")
+        print("  Normal:")
+        print("    wer <path>             read the file")
+        print()
         print("    -h or --help           help")
         print()
         print("    -v or --version        see version")
