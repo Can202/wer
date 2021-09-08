@@ -50,6 +50,14 @@ def extra_commands(arg):
         print("    -c or --create-file    create file if it doesn't exist")
         print("      Use:")
         print("        -c <path>")
+        print()
+        print("    -w or --write-file    Create a file, and write to a file")
+        print("      Use:")
+        print("        -w <path> \"<text>\"")
+        print()
+        print("    -a or --write-file    Add text to a file")
+        print("      Use:")
+        print("        -a <path> \"<text>\"")
         exit()
     elif arg == "-v" or arg == "--version":
         print("0.3")
@@ -61,7 +69,7 @@ def extra_commands(arg):
             else:
                 print("Not exists")
         else:
-            print("-f or --file-exists    see if the file exists")
+            print("-f or --file-exists    See if the file exists")
             print("  Use:")
             print("    -f <path>")
         exit()
@@ -76,23 +84,63 @@ def extra_commands(arg):
                 print("Folder doesn't exist")
 
         else:
-            print("    -c or --create-file    create file if it doesn't exist")
+            print("    -c or --create-file    Create file if it doesn't exist")
             print("      Use:")
             print("        -c <path>")
         exit()
 
+    elif arg == "-w" or arg == "--write-file":
+        if len(sys.argv) > 3:
+            text=str(sys.argv[3])
+            creating = createfile(sys.argv[2], write='w', text=text)
+            if creating == "isfolder":
+                print("cannot create folders")
+            elif creating == "fileexists":
+                print("The File exists")
+            elif creating == "folderdoesnotexist":
+                print("Folder doesn't exist")
 
-def createfile(path, write=False, text=""):
+        else:
+            print("    -w or --write-file    Create a file, and write to a file")
+            print("      Use:")
+            print("        -w <path> \"<text>\"")
+        exit()
+
+    elif arg == "-a" or arg == "--add-file":
+        if len(sys.argv) > 3:
+            text=str(sys.argv[3])
+            creating = createfile(sys.argv[2], write='a', text=text)
+            if creating == "isfolder":
+                print("cannot create folders")
+            elif creating == "fileexists":
+                print("The File exists")
+            elif creating == "folderdoesnotexist":
+                print("Folder doesn't exist")
+
+        else:
+            print("    -a or --write-file    Add text to a file")
+            print("      Use:")
+            print("        -a <path> \"<text>\"")
+        exit()
+
+
+def createfile(path, write='x', text=""):
     arg2 = str(path)
 
     if arg2.endswith("/") or arg2.endswith("\\"):
         return "isfolder"
+
     if file_exists(arg2):
-        return "fileexists"
+        if write == 'x':
+            return "fileexists"
+
     if folder_exists(arg2) == False:
         return "folderdoesnotexist"
 
-    fp = open(arg2, 'x')
+    fp = open(arg2, write)
+    if write != 'x':
+        fp.write(str(text))
+
     fp.close()
     return "done"
 
