@@ -58,7 +58,7 @@ def extra_commands(arg):
         print("      Use:")
         print("        -w <path> \"<text>\"")
         print()
-        print("    -a or --write-file    Add text to a file")
+        print("    -a or --add-file    Add text to a file")
         print("      Use:")
         print("        -a <path> \"<text>\"")
         print()
