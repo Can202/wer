@@ -66,6 +66,10 @@ def extra_commands(arg):
         print("      Use:")
         print("        -l          list current directory")
         print("        -l <path>   list <path> directory")
+        print()
+        print("    -rm or --remove     remove file")
+        print("      Use:")
+        print("        -rm <path>")
         exit()
     elif arg == "-v" or arg == "--version":
         print("0.3")
@@ -143,6 +147,24 @@ def extra_commands(arg):
         for i in range (len(ls)):
             print("- " + ls[i])
         exit()
+    elif arg == "-rm" or arg == "--remove":
+        if len(sys.argv) > 2:
+            patha = str(sys.argv[2])
+            if os.path.exists(patha):
+                if os.path.isfile(patha):
+                    os.remove(patha)
+                    exit()
+                else:
+                    print("not file")
+                    exit()
+            else:
+                print("the file doesn't exist")
+                exit()
+        else:
+            print("    -rm or --remove     remove file")
+            print("      Use:")
+            print("        -rm <path>")
+            exit()
 
 
 
