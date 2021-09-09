@@ -25,7 +25,7 @@ def main():
 
 def impread(path):
     if os.path.exists(path):
-        if os.path.isdir(path):
+        if os.path.isfile(path):
             return read_file(path)
         else:
             return "Is a Folder"
