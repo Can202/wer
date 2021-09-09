@@ -72,7 +72,7 @@ def extra_commands(arg):
         print("        -rm <path>")
         exit()
     elif arg == "-v" or arg == "--version":
-        print("0.3")
+        print("0.4")
         exit()
     elif arg == "-f" or arg == "--file-exists":
         if len(sys.argv) > 2:
