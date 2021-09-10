@@ -76,7 +76,7 @@ def extra_commands(arg):
         print("    -cc or --clear-console     clear console")
         exit()
     elif arg == "-v" or arg == "--version":
-        print("0.4")
+        print("0.5")
         exit()
     elif arg == "-f" or arg == "--file-exists":
         if len(sys.argv) > 2:
