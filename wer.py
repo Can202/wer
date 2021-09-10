@@ -217,7 +217,7 @@ def file_exists(pathfile):
         return False
 
 def read_file(pathfile):
-    file = open(pathfile,'r', encoding='utf8')
+    file = open(pathfile,'r', errors="ignore", encoding='utf8')
     contents = file.read()
     return contents
 
