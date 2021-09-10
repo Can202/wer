@@ -19,7 +19,7 @@ def main():
 
         if os.path.exists(sys.argv[temparg]):
             if os.path.isfile(sys.argv[temparg]) == True:
-                print(read_file(sys.argv[temparg]))
+                print(read_file(sys.argv[temparg]), end="")
             else:
                 print("Is a Folder")
         else:
