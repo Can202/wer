@@ -5,7 +5,6 @@ from sys import exit
 import os
 
 def main():
-
     if len(sys.argv) > 1:
         pathfile = sys.argv[1]
         pathfile = str(pathfile)
@@ -15,13 +14,16 @@ def main():
 
     extra_commands(pathfile)
 
-    if os.path.exists(pathfile):
-        if os.path.isfile(pathfile) == True:
-            print (read_file(pathfile))
+    for i in range(len(sys.argv) - 1):
+        temparg = i + 1
+
+        if os.path.exists(sys.argv[temparg]):
+            if os.path.isfile(sys.argv[temparg]) == True:
+                print(read_file(sys.argv[temparg]))
+            else:
+                print("Is a Folder")
         else:
-            print( "Is a Folder")
-    else:
-        print("your file does not exists")
+            print("your file does not exists")
 
 def impread(path):
     if os.path.exists(path):
