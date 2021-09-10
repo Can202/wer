@@ -72,6 +72,8 @@ def extra_commands(arg):
         print("    -rm or --remove     remove file")
         print("      Use:")
         print("        -rm <path>")
+        print()
+        print("    -cc or --clear-console     clear console")
         exit()
     elif arg == "-v" or arg == "--version":
         print("0.4")
