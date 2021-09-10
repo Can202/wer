@@ -167,7 +167,9 @@ def extra_commands(arg):
             print("      Use:")
             print("        -rm <path>")
             exit()
-
+    elif arg == "-cc" or arg == "--clear-console":
+        os.system('cls||clear')
+        exit()
 
 
 
