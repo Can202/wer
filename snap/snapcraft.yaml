@@ -1,0 +1,21 @@
+name: wer 
+base: core18 
+version: '0.5' 
+summary: wer is a program to read file with terminal # 79 char long summary
+description: |
+  wer is a program to read, create and simple edit files with terminal
+
+confinement: devmode 
+
+apps:
+	wer.py:
+		command: wer
+
+parts:
+  wer:
+    # See 'snapcraft plugins'
+    plugin: python
+    python-version: python2
+    source-tag: 0.5
+    source: https://github.com/Can202/wer.git
+    
